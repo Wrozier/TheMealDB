@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme colors -->
+    <color name="orange_primary">#FF5722</color>     <!-- deep orange -->
+    <color name="orange_dark">#E64A19</color>
+    <color name="orange_light">#FF8A65</color>
+
+    <!-- For text / backgrounds -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="background">#121212</color>         <!-- dark background -->
+</resources>
