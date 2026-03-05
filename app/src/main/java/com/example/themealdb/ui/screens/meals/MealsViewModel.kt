@@ -7,7 +7,7 @@ import com.example.themealdb.util.RetrofitClient
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-
+//bridge between the API and the UI
 class MealsViewModel : ViewModel() {
 
     private val _meals = MutableStateFlow<List<Meal>>(emptyList())

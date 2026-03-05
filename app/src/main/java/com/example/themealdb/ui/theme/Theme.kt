@@ -57,7 +57,7 @@ fun TheMealDBTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,   // your custom one if any
+        typography = Typography,   
         content = content
     )
 }

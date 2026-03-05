@@ -21,7 +21,7 @@ fun NavGraph(navController: NavHostController) {
 
         composable("meal/{mealId}") { backStackEntry ->
             val mealId = backStackEntry.arguments?.getString("mealId") ?: ""
-            MealDetailScreen(mealId = mealId)
+            MealDetailScreen(  onBackClick = { navController.popBackStack() }, mealId = mealId)
         }
     }
 }

@@ -1,8 +1,12 @@
 package com.example.themealdb.ui.screens.meal_detail
 
+import android.R.attr.onClick
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -13,12 +17,14 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MealDetailScreen(
     mealId: String,
+    onBackClick: () -> Unit,
     viewModel: MealDetailViewModel = viewModel()
 ) {
     LaunchedEffect(mealId) {
@@ -31,7 +37,15 @@ fun MealDetailScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Meal Details") })
+            TopAppBar(title = { Text("Meal Details") },
+                navigationIcon = {
+                    IconButton(onClick = { onBackClick() }) {
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "Back"
+                        )
+                    }
+                })
         }
     ) { padding ->
         when {
@@ -89,7 +103,7 @@ fun MealDetailScreen(
                         style = MaterialTheme.typography.bodyMedium
                     )
 
-                    // You can add ingredients list here later
+
                 }
             }
             else -> {
@@ -99,4 +113,8 @@ fun MealDetailScreen(
             }
         }
     }
+}
+
+fun onBackClick(navController: NavController) {
+    navController.popBackStack()
 }

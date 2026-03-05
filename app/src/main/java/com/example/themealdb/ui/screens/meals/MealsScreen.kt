@@ -23,11 +23,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.themealdb.ui.components.MealCard
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Composable
+@Composable //because this is a Jetpack Compose UI function
 fun MealsScreen(
     viewModel: MealsViewModel = viewModel(),
     onMealClick: (String) -> Unit
 ) {
+    //All UI
     val meals = viewModel.meals.collectAsState().value
     val isLoading = viewModel.isLoading.collectAsState().value
     val error = viewModel.error.collectAsState().value

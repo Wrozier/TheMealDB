@@ -2,6 +2,7 @@ package com.example.themealdb.data.model
 
 import kotlinx.serialization.Serializable
 
+//@Serializable class can be converted to and from JSON automatically.
 @Serializable
 data class Meal(
     val dateModified: String? = null,
